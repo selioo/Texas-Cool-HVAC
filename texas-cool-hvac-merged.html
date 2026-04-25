@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Texas Cool HVAC | AC Repair & Installation Dallas, TX</title>
+<meta name="description" content="Fast AC repair and HVAC installation in Dallas, TX. Same-day service, licensed technicians, upfront pricing. Call (214) 555-0172.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --primary: #E63946;
+    --dark: #1A1A2E;
+    --light: #F8F9FA;
+    --accent: #FF9F1C;
+    --white: #ffffff;
+    --gray: #6B7280;
+    --border: #E5E7EB;
+    --card-shadow: 0 4px 24px rgba(0,0,0,0.08);
+    --card-shadow-hover: 0 12px 40px rgba(0,0,0,0.14);
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    color: var(--dark);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  img { max-width: 100%; height: auto; }
+  a { text-decoration: none; color: inherit; }
+
+  /* ─── NAV ─── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    background: rgba(26, 26, 46, 0.96);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+    padding: 0 1.25rem;
+  }
+  .nav-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 64px;
+  }
+  .nav-logo {
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: var(--white);
+    letter-spacing: -0.02em;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .logo-icon {
+    width: 32px;
+    height: 32px;
+    background: var(--primary);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .nav-logo span { color: var(--primary); }
+  .nav-phone {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--white);
+    text-decoration: none;
+    background: var(--primary);
+    padding: 0.45rem 1rem;
+    border-radius: 6px;
+    transition: background 0.2s, transform 0.15s;
+    white-space: nowrap;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+  .nav-phone:hover { background: #c1121f; transform: translateY(-1px); }
+
+  /* ─── HERO ─── */
+  #hero {
+    min-height: 100vh;
+    background: var(--dark);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 6rem 1.25rem 4rem;
+    position: relative;
+    overflow: hidden;
+  }
+  #hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 70% 50% at 50% 40%, rgba(230,57,70,0.12) 0%, transparent 70%),
+                radial-gradient(ellipse 40% 30% at 80% 70%, rgba(255,159,28,0.06) 0%, transparent 60%);
+    pointer-events: none;
+  }
+  #hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+    background-size: 60px 60px;
+    pointer-events: none;
+  }
+  .hero-content { position: relative; z-index: 1; max-width: 760px; }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: rgba(230,57,70,0.15);
+    border: 1px solid rgba(230,57,70,0.35);
+    color: #ff8a92;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 0.35rem 0.9rem;
+    border-radius: 100px;
+    margin-bottom: 1.5rem;
+  }
+  .hero-badge::before { content: '★'; color: var(--accent); }
+
+  h1 {
+    font-size: clamp(2rem, 6vw, 3.6rem);
+    font-weight: 800;
+    color: var(--white);
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    margin-bottom: 1.25rem;
+  }
+  h1 em { font-style: normal; color: var(--primary); }
+
+  .hero-sub {
+    font-size: clamp(1rem, 2.5vw, 1.15rem);
+    color: #94A3B8;
+    max-width: 580px;
+    margin: 0 auto 2.25rem;
+    line-height: 1.7;
+  }
+
+  .btn-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    justify-content: center;
+    margin-bottom: 2.5rem;
+  }
+
+  .btn-primary {
+    background: var(--primary);
+    color: var(--white);
+    font-weight: 700;
+    font-size: 1rem;
+    padding: 0.85rem 1.75rem;
+    border-radius: 8px;
+    text-decoration: none;
+    border: 2px solid var(--primary);
+    transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+    box-shadow: 0 4px 20px rgba(230,57,70,0.35);
+    white-space: nowrap;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+  .btn-primary:hover { background: #c1121f; border-color: #c1121f; transform: translateY(-2px); box-shadow: 0 8px 28px rgba(230,57,70,0.45); }
+
+  .btn-secondary {
+    background: transparent;
+    color: var(--white);
+    font-weight: 700;
+    font-size: 1rem;
+    padding: 0.85rem 1.75rem;
+    border-radius: 8px;
+    text-decoration: none;
+    border: 2px solid rgba(255,255,255,0.35);
+    transition: border-color 0.2s, background 0.2s, transform 0.15s;
+    white-space: nowrap;
+  }
+  .btn-secondary:hover { border-color: var(--white); background: rgba(255,255,255,0.07); transform: translateY(-2px); }
+
+  .trust-indicators {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+    justify-content: center;
+  }
+  .trust-item {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    color: #94A3B8;
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+  .trust-item svg { color: var(--accent); flex-shrink: 0; }
+
+  /* ─── SECTION COMMON ─── */
+  section { padding: 5rem 1.25rem; }
+  .container { max-width: 1100px; margin: 0 auto; }
+  .section-header { text-align: center; margin-bottom: 3rem; }
+  .section-header h2 {
+    font-size: clamp(1.6rem, 4vw, 2.4rem);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    margin-bottom: 0.5rem;
+  }
+  .section-header p { color: var(--gray); font-size: 1.05rem; }
+  .eyebrow {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+  }
+
+  /* ─── SERVICES ─── */
+  #services { background: var(--white); }
+  .services-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+  .service-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.75rem;
+    transition: box-shadow 0.25s, transform 0.2s, border-color 0.25s;
+    box-shadow: var(--card-shadow);
+    text-align: center;
+  }
+  .service-card:hover {
+    box-shadow: var(--card-shadow-hover);
+    transform: translateY(-3px);
+    border-color: rgba(230,57,70,0.25);
+  }
+  .service-icon {
+    width: 64px; height: 64px;
+    border-radius: 16px;
+    background: rgba(230,57,70,0.08);
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 1.25rem;
+    color: var(--primary);
+  }
+  .service-card h3 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    letter-spacing: -0.01em;
+  }
+  .service-card p { color: var(--gray); font-size: 0.95rem; line-height: 1.65; }
+
+  /* ─── WHY CHOOSE US ─── */
+  #why { background: var(--light); }
+  .stats-row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-bottom: 3rem;
+  }
+  .stat-box {
+    background: var(--white);
+    border-radius: 12px;
+    padding: 1.5rem 1.25rem;
+    text-align: center;
+    box-shadow: var(--card-shadow);
+    border: 1px solid var(--border);
+    transition: box-shadow 0.2s, transform 0.2s;
+  }
+  .stat-box:hover { box-shadow: var(--card-shadow-hover); transform: translateY(-2px); }
+  .stat-number {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--primary);
+    line-height: 1;
+    letter-spacing: -0.04em;
+    margin-bottom: 0.3rem;
+  }
+  .stat-label { font-size: 0.85rem; color: var(--gray); font-weight: 600; }
+
+  .features-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+  .feature-card {
+    background: var(--white);
+    border-radius: 12px;
+    padding: 1.75rem;
+    box-shadow: var(--card-shadow);
+    border: 1px solid var(--border);
+    transition: box-shadow 0.25s, transform 0.2s;
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+  .feature-card:hover { box-shadow: var(--card-shadow-hover); transform: translateY(-2px); }
+  .feature-icon {
+    width: 44px; height: 44px; min-width: 44px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, var(--primary), #c1121f);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.2rem;
+    color: white;
+  }
+  .feature-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 0.4rem; }
+  .feature-card p { color: var(--gray); font-size: 0.92rem; line-height: 1.6; }
+
+  /* ─── TESTIMONIALS ─── */
+  #testimonials { background: var(--white); }
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+  .testimonial-card {
+    background: var(--light);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 1.75rem;
+    box-shadow: var(--card-shadow);
+    transition: box-shadow 0.25s, transform 0.2s;
+    position: relative;
+  }
+  .testimonial-card:hover { box-shadow: var(--card-shadow-hover); transform: translateY(-3px); }
+  .testimonial-card::before {
+    content: '"';
+    position: absolute;
+    top: 1rem; right: 1.25rem;
+    font-size: 4rem;
+    color: var(--primary);
+    opacity: 0.15;
+    font-family: Georgia, serif;
+    line-height: 1;
+  }
+  .stars {
+    color: var(--accent);
+    font-size: 0.95rem;
+    margin-bottom: 0.75rem;
+    letter-spacing: 1px;
+  }
+  .testimonial-text {
+    color: #374151;
+    font-size: 0.97rem;
+    line-height: 1.7;
+    margin-bottom: 1.25rem;
+    font-style: italic;
+  }
+  .testimonial-author { font-weight: 700; font-size: 0.88rem; color: var(--dark); }
+  .testimonial-location { font-size: 0.82rem; color: var(--gray); margin-top: 0.15rem; }
+
+  /* ─── SERVICE AREA ─── */
+  #service-area { background: var(--light); text-align: center; }
+  .area-sub { color: var(--gray); margin-bottom: 2rem; font-size: 1rem; }
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.65rem;
+    justify-content: center;
+  }
+  .tag {
+    background: var(--white);
+    border: 1px solid var(--border);
+    color: var(--dark);
+    font-weight: 600;
+    font-size: 0.88rem;
+    padding: 0.45rem 1rem;
+    border-radius: 100px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    transition: background 0.2s, color 0.2s, border-color 0.2s, transform 0.15s;
+  }
+  .tag:hover { background: var(--primary); color: var(--white); border-color: var(--primary); transform: translateY(-2px); }
+
+  /* ─── CTA ─── */
+  #cta {
+    background: var(--primary);
+    text-align: center;
+    padding: 5rem 1.25rem;
+    position: relative;
+    overflow: hidden;
+  }
+  #cta::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 60% 80% at 50% 50%, rgba(255,255,255,0.06), transparent);
+    pointer-events: none;
+  }
+  #cta h2 {
+    font-size: clamp(1.8rem, 5vw, 3rem);
+    font-weight: 800;
+    color: var(--white);
+    letter-spacing: -0.03em;
+    margin-bottom: 0.75rem;
+  }
+  #cta p {
+    color: rgba(255,255,255,0.85);
+    font-size: 1.05rem;
+    max-width: 540px;
+    margin: 0 auto 2rem;
+    line-height: 1.65;
+  }
+  .btn-white {
+    background: var(--white);
+    color: var(--primary);
+    font-weight: 800;
+    font-size: 1.1rem;
+    padding: 1rem 2.25rem;
+    border-radius: 8px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 6px 24px rgba(0,0,0,0.2);
+    letter-spacing: -0.01em;
+  }
+  .btn-white:hover { transform: translateY(-3px); box-shadow: 0 12px 36px rgba(0,0,0,0.25); }
+  .cta-sub {
+    margin-top: 1.25rem;
+    color: rgba(255,255,255,0.75);
+    font-size: 0.9rem;
+  }
+  .cta-sub a { color: rgba(255,255,255,0.9); text-decoration: underline; text-underline-offset: 3px; }
+  .cta-sub a:hover { color: var(--dark); }
+
+  /* ─── FOOTER ─── */
+  footer {
+    background: var(--dark);
+    color: rgba(255,255,255,0.6);
+    text-align: center;
+    padding: 3rem 1.25rem;
+  }
+  .footer-brand {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: var(--white);
+    margin-bottom: 1.5rem;
+  }
+  .footer-brand span { color: var(--primary); }
+  .footer-info {
+    font-size: 0.9rem;
+    line-height: 2;
+    margin-bottom: 0.75rem;
+  }
+  .footer-info a { color: rgba(255,255,255,0.7); text-decoration: none; transition: color 0.3s ease; }
+  .footer-info a:hover { color: var(--primary); }
+  .footer-hours { font-size: 0.85rem; margin-bottom: 1.25rem; }
+  .footer-copy { font-size: 0.82rem; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 1.25rem; margin-top: 1.25rem; }
+
+  /* ─── RESPONSIVE ─── */
+  @media (min-width: 560px) {
+    .services-grid { grid-template-columns: repeat(2, 1fr); }
+    .testimonials-grid { grid-template-columns: repeat(2, 1fr); }
+    .features-grid { grid-template-columns: 1fr; }
+  }
+
+  @media (min-width: 768px) {
+    .stats-row { grid-template-columns: repeat(4, 1fr); }
+    .features-grid { grid-template-columns: repeat(3, 1fr); }
+    .testimonials-grid { grid-template-columns: repeat(3, 1fr); }
+  }
+
+  @media (min-width: 900px) {
+    .services-grid { grid-template-columns: repeat(3, 1fr); }
+  }
+</style>
+<base target="_blank">
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="#hero" class="nav-logo">
+      <div class="logo-icon">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 3v18"/>
+          <path d="M5 10a7 7 0 0 1 14 0"/>
+          <path d="M5 14a7 7 0 0 0 14 0"/>
+        </svg>
+      </div>
+      Texas <span>Cool</span> HVAC
+    </a>
+    <a href="tel:+12145550172" class="nav-phone">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+      </svg>
+      (214) 555-0172
+    </a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-content">
+    <div class="hero-badge">Dallas's Most Trusted HVAC Company</div>
+    <h1>Fast <em>AC Repair</em> & HVAC Installation in Dallas, TX</h1>
+    <p class="hero-sub">Same-day service available. Licensed technicians. Upfront pricing. No surprises on your bill.</p>
+    <div class="btn-group">
+      <a href="tel:+12145550172" class="btn-primary">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+        </svg>
+        Call Now — (214) 555-0172
+      </a>
+      <a href="mailto:service@texascoolvac.com" class="btn-secondary">Book Online</a>
+    </div>
+    <div class="trust-indicators">
+      <div class="trust-item">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="20 6 9 17 4 12"/>
+        </svg>
+        Same-Day Service
+      </div>
+      <div class="trust-item">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="20 6 9 17 4 12"/>
+        </svg>
+        Licensed & Insured
+      </div>
+      <div class="trust-item">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="20 6 9 17 4 12"/>
+        </svg>
+        Free Estimates
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="container">
+    <div class="section-header">
+      <div class="eyebrow">Our Services</div>
+      <h2>What We Fix & Install</h2>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 3v18"/>
+            <path d="M5 10a7 7 0 0 1 14 0"/>
+            <path d="M5 14a7 7 0 0 0 14 0"/>
+          </svg>
+        </div>
+        <h3>AC Repair</h3>
+        <p>Fast diagnosis and repair for all AC makes and models. Same-day service available when you need it most.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+            <line x1="8" y1="21" x2="16" y2="21"/>
+            <line x1="12" y1="17" x2="12" y2="21"/>
+          </svg>
+        </div>
+        <h3>AC Installation</h3>
+        <p>New energy-efficient AC systems installed by certified technicians. We help you choose the right unit for your home.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/>
+          </svg>
+        </div>
+        <h3>Heating Repair</h3>
+        <p>Furnace and heat pump repair before the cold hits. Don't wait until it breaks — call us for a tune-up.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+            <polyline points="14 2 14 8 20 8"/>
+            <line x1="16" y1="13" x2="8" y2="13"/>
+            <line x1="16" y1="17" x2="8" y2="17"/>
+            <polyline points="10 9 9 9 8 9"/>
+          </svg>
+        </div>
+        <h3>Heating Installation</h3>
+        <p>New furnace and heat pump installation with manufacturer warranty and our 2-year labor guarantee.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+            <polyline points="9 22 9 12 15 12 15 22"/>
+          </svg>
+        </div>
+        <h3>Air Quality</h3>
+        <p>Duct cleaning, air purifiers, and humidity control. Breathe cleaner air in your home.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/>
+            <polyline points="12 6 12 12 16 14"/>
+          </svg>
+        </div>
+        <h3>Maintenance Plans</h3>
+        <p>Seasonal tune-ups that keep your system running efficiently and your energy bills low.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY CHOOSE US -->
+<section id="why">
+  <div class="container">
+    <div class="section-header">
+      <div class="eyebrow">Why Texas Cool</div>
+      <h2>Why Dallas Homeowners Choose Texas Cool</h2>
+    </div>
+    <div class="stats-row">
+      <div class="stat-box">
+        <div class="stat-number">14 Years</div>
+        <div class="stat-label">Serving Dallas</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-number">2,400+</div>
+        <div class="stat-label">Jobs Completed</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-number">18</div>
+        <div class="stat-label">Certified Technicians</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-number">4.9★</div>
+        <div class="stat-label">Google Rating</div>
+      </div>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/>
+            <polyline points="12 6 12 12 16 14"/>
+          </svg>
+        </div>
+        <div>
+          <h3>Same-Day Emergency Service</h3>
+          <p>AC goes out at 9PM in July? We answer. Dallas summers don't wait and neither do we.</p>
+        </div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="12" y1="1" x2="12" y2="23"/>
+            <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+          </svg>
+        </div>
+        <div>
+          <h3>Upfront Flat-Rate Pricing</h3>
+          <p>You know the price before we start. No surprise charges. No hourly billing games.</p>
+        </div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+          </svg>
+        </div>
+        <div>
+          <h3>All Brands Serviced</h3>
+          <p>Carrier, Trane, Lennox, Goodman, Rheem — we know every system inside and out.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials">
+  <div class="container">
+    <div class="section-header">
+      <div class="eyebrow">Customer Reviews</div>
+      <h2>What Dallas Homeowners Say</h2>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">My AC died on a Friday afternoon in August. Texas Cool had a tech at my house by 6PM and fixed it same day. Absolute lifesavers.</p>
+        <div class="testimonial-author">Jennifer M.</div>
+        <div class="testimonial-location">Homeowner · Plano, TX</div>
+      </div>
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">Fair pricing, no upselling, showed up on time. I've used three other HVAC companies in Dallas and Texas Cool is the only one I'll call again.</p>
+        <div class="testimonial-author">Marcus T.</div>
+        <div class="testimonial-location">Homeowner · Richardson, TX</div>
+      </div>
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">They installed a new Carrier system for us last spring. Clean work, explained everything, and our energy bill dropped $140 a month.</p>
+        <div class="testimonial-author">Linda & Bob K.</div>
+        <div class="testimonial-location">Homeowners · Frisco, TX</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICE AREA -->
+<section id="service-area">
+  <div class="container">
+    <div class="section-header">
+      <div class="eyebrow">Coverage Area</div>
+      <h2>Serving All of Dallas-Fort Worth</h2>
+    </div>
+    <p class="area-sub">From downtown Dallas to the suburbs — we come to you.</p>
+    <div class="tags">
+      <span class="tag">Dallas</span>
+      <span class="tag">Plano</span>
+      <span class="tag">Richardson</span>
+      <span class="tag">Frisco</span>
+      <span class="tag">McKinney</span>
+      <span class="tag">Allen</span>
+      <span class="tag">Garland</span>
+      <span class="tag">Irving</span>
+      <span class="tag">Arlington</span>
+      <span class="tag">Fort Worth</span>
+      <span class="tag">Carrollton</span>
+      <span class="tag">Denton</span>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="cta">
+  <div class="container">
+    <h2>AC Down? Don't Sweat It.</h2>
+    <p>Same-day service available 7 days a week. Call now or book online — we'll have a tech at your door fast.</p>
+    <a href="tel:+12145550172" class="btn-white">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+      </svg>
+      Call (214) 555-0172
+    </a>
+    <p class="cta-sub">Or <a href="mailto:service@texascoolvac.com">click to book online</a> — service@texascoolvac.com</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand">Texas <span>Cool</span> HVAC</div>
+  <div class="footer-info">
+    2847 Maple Ave, Dallas, TX 75201<br>
+    <a href="tel:+12145550172">(214) 555-0172</a> &nbsp;·&nbsp;
+    <a href="mailto:service@texascoolvac.com">service@texascoolvac.com</a>
+  </div>
+  <div class="footer-hours">
+    Mon–Fri: 7AM–8PM &nbsp;|&nbsp; Sat–Sun: 8AM–6PM
+  </div>
+  <div class="footer-copy">© 2025 Texas Cool HVAC. All Rights Reserved.</div>
+</footer>
+
+</body>
+</html>
